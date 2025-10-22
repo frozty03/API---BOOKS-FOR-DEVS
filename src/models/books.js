@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 
 // a schema is a object that defines the document (book)
 const bookSchema = new mongoose.Schema({
-    id: { type: mongoose.Schema.Types.ObjectId }, // mongoose defines a unique id
     title: { type: String, required: true },
     author: { type: String },
     avgPrice: { type: Number },
