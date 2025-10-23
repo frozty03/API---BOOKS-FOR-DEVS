@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
+import { authorSchema } from './authors.js'
 
 // a schema is a object that defines the document (book)
 const bookSchema = new mongoose.Schema({
     title: { type: String, required: true },
-    author: { type: String },
     avgPrice: { type: Number },
-    pages: { type: Number }
+    pages: { type: Number },
+    author: authorSchema // sending the data of author Schema to Book
 }, { versionKey: false });
 
 const booksModel = mongoose.model('books', bookSchema); // receives the name of the collection (in the mongodb atlas) and the schema

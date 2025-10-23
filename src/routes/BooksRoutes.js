@@ -5,6 +5,8 @@ const booksRoute = express.Router();
 
 booksRoute.get('/books', BooksController.listBooks); // route and the method
 
+booksRoute.get('/books/search', BooksController.findBookAuthor);
+
 booksRoute.get('/books/:id', BooksController.listIdBook);
 
 booksRoute.post('/books', BooksController.registerBook);

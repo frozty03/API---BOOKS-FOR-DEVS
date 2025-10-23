@@ -1,10 +1,12 @@
 import express from 'express';
 import booksRoute from './BooksRoutes.js'
+import authorRoute from './AuthorRoutes.js';
 
 const routes = (app) => {
     app.route('/').get((req, res) => {res.status(200).send('Test Server')})
 
-    app.use(express.json(), booksRoute); 
+    app.use(express.json(), booksRoute, authorRoute); 
+    
     // running express in app
     // middleware - have access to req/res to execute some other actions
     // parse every body that is compatible to JSON to JSON
